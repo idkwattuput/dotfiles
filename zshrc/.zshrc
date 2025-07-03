@@ -107,6 +107,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # export MANPAGER="less -R --use-color -Dd+r -Du+b"
-export MANPAGER="nvim --clean +Man!"
+# export MANPAGER="nvim --clean +Man!"
+export MANPAGER="nvim +Man!"
 
 pfetch

@@ -1,66 +1,66 @@
 // -*- mode: jsonc -*-
 {
-    "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 40, // Waybar height (to be removed for auto height)
+  "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 40, // Waybar height (to be removed for auto height)
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-	    "custom/arch",
-        "clock"
+      "custom/arch",
+      "clock"
     ],
     "modules-center": [
-        "sway/workspaces"
+      "sway/workspaces"
     ],
     "modules-right": [
-        "pulseaudio",
-        "custom/separator",
-        "battery",
-        "battery#bat2",
-        "custom/separator",
-        "network",
-        "custom/separator",
-        "custom/power"
+      "pulseaudio",
+      "custom/separator",
+      "battery",
+      "battery#bat2",
+      "custom/separator",
+      "network",
+      "custom/separator",
+      "custom/power"
     ],
     "custom/separator":{
-	"exec": "echo '|'"
+      "exec": "echo '|'"
     },
     "custom/arch":{
-	"exec": "echo '󰣇'"
+      "exec": "echo '󰣇'"
     },
     "clock": {
-	// "format": "{:%a, %d. %b %H:%M}",
+  // "format": "{:%a, %d. %b %H:%M}",
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	"tooltip-format": "<span>{calendar}</span>",
-	"calendar": {
-      "mode": "month",
-      "mode-mon-col": 3,
-      "on-scroll": 1,
-      "on-click-right": "mode",
-      "format": {
-        "months": "<span color='#ffead3'><b>{}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b>{}</b></span>"
-      }
-    },
-	 "format": "{:%H:%M | %a, %d %b %Y}"
+        "tooltip-format": "<span>{calendar}</span>",
+        "calendar": {
+          "mode": "month",
+          "mode-mon-col": 3,
+          "on-scroll": 1,
+          "on-click-right": "mode",
+          "format": {
+            "months": "<span color='#ffead3'><b>{}</b></span>",
+            "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+            "today": "<span color='#ff6699'><b>{}</b></span>"
+          }
+        },
+        "format": "{:%H:%M | %a, %d %b %Y}"
     },
     "battery": {
-        "states": {
+      "states": {
             // "good": 95,
             "warning": 30,
             "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+      },
+      "format": "{capacity}% {icon}",
+      "format-full": "{capacity}% {icon}",
+      "format-charging": "{capacity}% ",
+      "format-plugged": "{capacity}% ",
+      "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
     "battery#bat2": {
-        "bat": "BAT2"
+      "bat": "BAT2"
     },
     "power-profiles-daemon": {
       "format": "{icon}",
@@ -74,10 +74,12 @@
       }
     },
     "network": {
-        "format-wifi": " ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠"
+      "format-wifi": " ",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "format-linked": "{ifname} (No IP) ",
+      "format-disconnected": "Disconnected ⚠",
+      "on-click": "~/.local/bin/wifimenu.sh"
+        // "on-click": "kitty nmtui"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -88,26 +90,19 @@
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
     "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+      "format" : "⏻ ",
+      "tooltip": false,
+      "on-click": "wlogout"
     }
 }
