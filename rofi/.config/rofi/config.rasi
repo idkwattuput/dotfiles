@@ -15,7 +15,7 @@ configuration {
 	fg: #cdd6f4;
 	fg-alt: #181825;
 	background-color: @bg;
-	border: 4px;
+	border: 2px;
 	margin: 0;
 	padding: 0;
 	spacing: 0;

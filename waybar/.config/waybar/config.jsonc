@@ -1,6 +1,9 @@
 // -*- mode: jsonc -*-
 {
   "position": "bottom", // Waybar position (top|bottom|left|right)
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-bottom": 10,
   "height": 40, // Waybar height (to be removed for auto height)
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -52,7 +55,7 @@
       },
       "format": "{capacity}% {icon}",
       "format-full": "{capacity}% {icon}",
-      "format-charging": "{capacity}% ",
+      "format-charging": "{capacity}% 󰂄",
       "format-plugged": "{capacity}% ",
       "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -86,7 +89,7 @@
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": " {icon}",
-        "format-muted": " {format_source}",
+        "format-muted": "󰝟",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {

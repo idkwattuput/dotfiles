@@ -23,7 +23,8 @@ for_window [class="^.*"] border pixel 2
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/Pictures/Wallpapers/crane.png fill
+
 #
 # Example configuration:
 #
@@ -79,7 +80,7 @@ exec swayidle -w \
     bindsym $mod+b exec $browser
 
     # Start your launcher
-    bindsym $mod+d exec --no-startup-id rofi -show drun
+    bindsym $mod+d exec rofi -show drun 
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -209,13 +210,18 @@ bindsym $mod+r mode "resize"
 # Utilities:
 #
     # Special keys to adjust volume via PulseAudio
-    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    # bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioMute exec ~/.local/bin/volume mute
+    # bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioLowerVolume exec ~/.local/bin/volume down
+    # bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioRaiseVolume exec ~/.local/bin/volume up
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    # bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    # bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym --locked XF86MonBrightnessDown exec ~/.local/bin/backlight down
+    bindsym --locked XF86MonBrightnessUp exec ~/.local/bin/backlight up
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
@@ -228,9 +234,10 @@ bar {
 }
 
 # Gap
-workspace 5 gaps horizontal 150
-workspace 5 gaps vertical 50
-workspace 5 gaps inner 10
+gaps inner 10
+# workspace 5 gaps horizontal 150
+# workspace 5 gaps vertical 50
+# workspace 5 gaps inner 10
 
 set $rosewater #f5e0dc
 set $flamingo  #f2cdcd

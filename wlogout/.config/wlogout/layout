@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "loginctl lock-session",
+    "action" : "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --timestr '󰥔 %Hh %Mm %Ss' --datestr '󰃭 %b-%d-%Y' --show-failed-attempts --indicator-idle-visible",
     "text" : "Lock",
     "keybind" : "l"
 }
