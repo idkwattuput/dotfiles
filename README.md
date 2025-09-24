@@ -1,7 +1,7 @@
 # Dotfiles
 
 ![alt text](/screenshot/20250709_22h06m21s_grim.png)
-![alt text](/screenshot/20250710_13h34m40s_grim.png)
+![alt text](/screenshot/20250924_16h54m33s_grim.png)
 
 # Overview
 - Operating System: **Arch Linux**
