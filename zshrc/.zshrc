@@ -111,7 +111,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # export MANPAGER="nvim --clean +Man!"
 export MANPAGER="nvim +Man!"
 
-fastfetch
+fastfetch -c /usr/share/fastfetch/presets/examples/13.jsonc
 
 # bun completions
 [ -s "/home/idkwattuput/.bun/_bun" ] && source "/home/idkwattuput/.bun/_bun"
