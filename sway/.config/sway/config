@@ -27,7 +27,7 @@ workspace 1 output eDP-1
 workspace 2 output HDMI-A-1
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/Wallpapers/crane.png fill
+# output * bg ~/Pictures/Wallpapers/crane.png fill
 
 #
 # Example configuration:
@@ -44,6 +44,8 @@ exec swayidle -w \
          timeout 300 'swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --timestr "󰥔 %Hh %Mm %Ss" --datestr "󰃭 %b-%d-%Y" --show-failed-attempts --indicator-idle-visible' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --timestr "󰥔 %Hh %Mm %Ss" --datestr "󰃭 %b-%d-%Y" --show-failed-attempts --indicator-idle-visible'
+
+exec_always swww-daemon
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -71,6 +73,10 @@ exec swayidle -w \
 #
 # Basics:
 #
+
+    # Change Wallpapers
+    bindsym $mod+Shift+w exec ~/.local/bin/wallpaper-picker
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
