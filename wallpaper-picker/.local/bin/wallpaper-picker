@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Folder containing your wallpapers
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+
+# Use rofi to pick a file
+# SELECTED=$(find "$WALLPAPER_DIR" -type f | rofi -dmenu -p "Choose wallpaper:")
+
+# Current directory (to cd back to)
+CWD="$(pwd)"
+
+cd "$WALLPAPER_DIR" || exit
+
+# Handle spaces in filenames
+IFS=$'\n'
+
+# Gra the user-selected wallpaper
+SELECTED=$(for a in *.jpg *.png; do echo -en "$a\0icon\x1f$a\n" ; done | rofi -dmenu -p "Choose wallpaper:")
+
+# If a file was selected, set it using swww
+if [ -n "$SELECTED" ]; then
+    swww img "$SELECTED" --transition-type any --transition-fps 60
+fi
+
+cd "$CWD" || exit
