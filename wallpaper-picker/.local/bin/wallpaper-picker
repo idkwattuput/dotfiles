@@ -15,7 +15,7 @@ cd "$WALLPAPER_DIR" || exit
 IFS=$'\n'
 
 # Gra the user-selected wallpaper
-SELECTED=$(for a in *.jpg *.png; do echo -en "$a\0icon\x1f$a\n" ; done | rofi -dmenu -p "Choose wallpaper:")
+SELECTED=$(for a in *.jpg *.png; do echo -en "$a\0icon\x1f$a\n" ; done | rofi -dmenu -theme ~/.config/rofi/wallpaper.rasi -p "Choose wallpaper:")
 
 # If a file was selected, set it using swww
 if [ -n "$SELECTED" ]; then
