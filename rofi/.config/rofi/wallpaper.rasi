@@ -1,6 +1,4 @@
 configuration {
-	display-drun: "Applications:";
-	drun-display-format: "{icon} {name}";
 	font: "JetBrainsMono Nerd Font Medium 12";
 	modi: "window";
 	show-icons: true;
@@ -22,13 +20,14 @@ configuration {
 }
 
 window {
-	width: 45%;
+	width: 70%;
 	border-color: @bg-alt;
 }
 
 element {
 	padding: 12;
 	text-color: @fg;
+  orientation: vertical;
 }
 
 element selected {
@@ -39,12 +38,14 @@ element selected {
 element-text {
 	background-color: inherit;
 	text-color: inherit;
-	vertical-align: 0.5;
+	horizontal-align: 0.5;
+  text-align: center;
 }
 
 element-icon {
-	size: 30;
+	size: 500;
 	background-color: transparent;
+	horizontal-align: 0.5;
 }
 
 entry {
@@ -59,8 +60,8 @@ inputbar {
 
 listview {
 	background-color :@bg;
-	columns: 1;
-	lines: 8;
+	columns: 3;
+	lines: 1;
 }
 
 mainbox {
